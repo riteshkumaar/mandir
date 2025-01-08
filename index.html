@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>॥ द्वादश ज्योतिर्लिंग दर्शन ॥</title>
+    <style>
+        body {
+            background: radial-gradient(circle, #3d1a66, #120a29);
+            color: #ffcc00;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            animation: fadeIn 1.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .jyotirlinga-card {
+            background: linear-gradient(135deg, #ffbb33, #ff6600);
+            border-radius: 15px;
+            padding: 1rem;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            cursor: pointer;
+            animation: glow 2s infinite alternate;
+            color: whitesmoke;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 15px #ffbb33; }
+            to { box-shadow: 0 0 40px #ff6600; }
+        }
+        .jyotirlinga-card:hover {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 0 50px #ffcc00;
+        }
+        .jyotirlinga-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+        .jyotirlinga-card:hover .jyotirlinga-image {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        .jyotirlinga-title {
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+        .jyotirlinga-location {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <h1>॥ द्वादश ज्योतिर्लिंग दर्शन ॥</h1>
+    <div class="container">
+        <script>
+            const jyotirlingas = [
+                { name: "श्री सोमनाथ", location: "प्रभास पाटन, गुजरात", image: "somnath.png", audio: "somnath.mp3" },
+                { name: "श्री मल्लिकार्जुन", location: "श्रीशैलम, आंध्र प्रदेश", image: "mallikarjun.jpg", audio: "mallikarjun.mp3" },
+                { name: "श्री महाकालेश्वर", location: "उज्जैन, मध्य प्रदेश", image: "mahakal.jpg", audio: "mahakal.mp3" },
+                { name: "श्री ओंकारेश्वर", location: "खंडवा, मध्य प्रदेश", image: "omkareshwar.jpg", audio: "omkareshwar.mp3" },
+                { name: "श्री केदारनाथ", location: "रुद्रप्रयाग, उत्तराखंड", image: "kedarnath.jpg", audio: "kedarnath.mp3" },
+                { name: "श्री भीमाशंकर", location: "पुणे, महाराष्ट्र", image: "bhimashankar.jpg", audio: "bhimashankar.mp3" },
+                { name: "श्री काशी विश्वनाथ", location: "वाराणसी, उत्तर प्रदेश", image: "kashi.jpg", audio: "kashi.mp3" },
+                { name: "श्री त्र्यंबकेश्वर", location: "नासिक, महाराष्ट्र", image: "trimbakeshwar.jpg", audio: "trimbakeshwar.mp3" },
+                { name: "श्री वैद्यनाथ", location: "देवघर, झारखंड", image: "baidyanath.jpg", audio: "baidyanath.mp3" },
+                { name: "श्री नागेश्वर", location: "द्वारका, गुजरात", image: "nageshwar.jpg", audio: "nageshwar.mp3" },
+                { name: "श्री रामेश्वर", location: "रामेश्वरम, तमिलनाडु", image: "rameshwaram.jpg", audio: "rameshwaram.mp3" },
+                { name: "श्री घृष्णेश्वर", location: "औरंगाबाद, महाराष्ट्र", image: "ghrushneshwar.jpg", audio: "ghrushneshwar.mp3" }
+            ];
+
+            jyotirlingas.forEach(jyotirlinga => {
+                document.write(`
+                    <div class='jyotirlinga-card' onclick="location.href='jyotirlinga.html?name=${jyotirlinga.name}&location=${jyotirlinga.location}&image=${jyotirlinga.image}&audio=${jyotirlinga.audio}'">
+                        <img src="images/${jyotirlinga.image}" alt="${jyotirlinga.name}" class='jyotirlinga-image'>
+                        <h2 class='jyotirlinga-title'>${jyotirlinga.name}</h2>
+                        <p class='jyotirlinga-location'>${jyotirlinga.location}</p>
+                    </div>
+                `);
+            });
+        </script>
+    </div>
+</body>
+</html>
